@@ -125,7 +125,7 @@ const animationTimeline = () => {
         opacity: 0,
         y: -150
       },
-      "+=0.2"
+      "+=0.7"
     )
     .from(".idea-1", 0.7, ideaTextTrans)
     .to(".idea-1", 0.7, ideaTextTransLeave, "+=1.5")
@@ -138,12 +138,12 @@ const animationTimeline = () => {
       backgroundColor: "rgb(21, 161, 237)",
       color: "#fff"
     })
-    .to(".idea-3", 0.2, ideaTextTransLeave, "+=1.5")
-    .from(".idea-4", 0.2, ideaTextTrans)
-    .to(".idea-4", 0.2, ideaTextTransLeave, "+=1.5")
+    .to(".idea-3", 0.7, ideaTextTransLeave, "+=1.5")
+    .from(".idea-4", 0.7, ideaTextTrans)
+    .to(".idea-4", 0.7, ideaTextTransLeave, "+=1.5")
     .from(
       ".idea-5",
-      0.2,
+      0.7,
       {
         rotationX: 15,
         rotationZ: -10,
@@ -165,7 +165,7 @@ const animationTimeline = () => {
     )
     .to(
       ".idea-5",
-      0.2,
+      0.7,
       {
         scale: 0.2,
         opacity: 0
@@ -174,7 +174,7 @@ const animationTimeline = () => {
     )
     .staggerFrom(
       ".idea-6 span",
-      0.2,
+      0.8,
       {
         scale: 3,
         opacity: 0,
@@ -185,15 +185,15 @@ const animationTimeline = () => {
     )
     .staggerTo(
       ".idea-6 span",
-      0.2,
+      0.8,
       {
         scale: 3,
         opacity: 0,
         rotation: -15,
         ease: Expo.easeOut
       },
-      0.0,
-      "+=0.5"
+      0.2,
+      "+=1"
     )
     .staggerFromTo(
       ".baloons img",
@@ -210,7 +210,7 @@ const animationTimeline = () => {
     )
     .from(
       ".shusmita-dp",
-      0.2,
+      0.5,
       {
         scale: 3.5,
         opacity: 0,
@@ -218,7 +218,7 @@ const animationTimeline = () => {
         y: -25,
         rotationZ: -45
       },
-      "-=0.1"
+      "-=2"
     )
     .from(".hat", 0.5, {
       x: -100,
