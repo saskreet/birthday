@@ -210,7 +210,7 @@ const animationTimeline = () => {
     )
     .from(
       ".shusmita-dp",
-      0.2,
+      0.9,
       {
         scale: 3.5,
         opacity: 0,
