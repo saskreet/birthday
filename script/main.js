@@ -143,7 +143,7 @@ const animationTimeline = () => {
     .to(".idea-4", 0.7, ideaTextTransLeave, "+=1.5")
     .from(
       ".idea-5",
-      0.7,
+      0.2,
       {
         rotationX: 15,
         rotationZ: -10,
@@ -210,7 +210,7 @@ const animationTimeline = () => {
     )
     .from(
       ".shusmita-dp",
-      0.9,
+      0.2,
       {
         scale: 3.5,
         opacity: 0,
