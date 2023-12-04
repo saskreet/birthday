@@ -73,7 +73,7 @@ const animationTimeline = () => {
         opacity: 0,
         y: 10
       },
-      "+=2"
+      "+=2.5"
     )
     .to(
       ".two",
@@ -96,7 +96,7 @@ const animationTimeline = () => {
         opacity: 0,
         y: 10
       },
-      "+=1"
+      "+=2"
     )
     .from(".four", 0.7, {
       scale: 0.2,
@@ -170,7 +170,7 @@ const animationTimeline = () => {
         scale: 0.2,
         opacity: 0
       },
-      "+=1"
+      "+=2"
     )
     .staggerFrom(
       ".idea-6 span",
@@ -218,7 +218,7 @@ const animationTimeline = () => {
         y: -25,
         rotationZ: -45
       },
-      "-=1"
+      "-=2"
     )
     .from(".hat", 0.5, {
       x: -100,
