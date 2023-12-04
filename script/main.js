@@ -1,4 +1,4 @@
-// Import the data to customize and insert them into page
+// Import the data to customize and insert them into the page
 const fetchData = () => {
   fetch("customize.json")
     .then(data => data.json())
@@ -6,25 +6,26 @@ const fetchData = () => {
       dataArr = Object.keys(data);
       dataArr.map(customData => {
         if (data[customData] !== "") {
-          if (customData === "imagePath") {
-            document
-              .querySelector(`[data-node-name*="${customData}"]`)
-              .setAttribute("src", data[customData]);
-          } else {
-            document.querySelector(`[data-node-name*="${customData}"]`).innerText = data[customData];
+          const element = document.querySelector(`[data-node-name*="${customData}"]`);
+          if (element) {
+            if (customData === "imagePath") {
+              element.setAttribute("src", data[customData]);
+            } else {
+              element.innerText = data[customData];
+            }
           }
         }
-
         // Check if the iteration is over
-        // Run amimation if so
-        if ( dataArr.length === dataArr.indexOf(customData) + 1 ) {
+        // Run animation if so
+        if (dataArr.length === dataArr.indexOf(customData) + 1) {
           animationTimeline();
-        } 
+        }
       });
     });
 };
 
 // Animation Timeline
+const animationTimeline = () => {
 const animationTimeline = () => {
   // Spit chars that needs to be animated individually
   const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
@@ -53,6 +54,7 @@ const animationTimeline = () => {
   };
 
   const tl = new TimelineMax();
+
 
   tl
     .to(".container", 0.1, {
@@ -172,17 +174,19 @@ const animationTimeline = () => {
       },
       "+=2"
     )
-    .staggerFrom(
-      ".idea-6 span",
-      0.8,
-      {
-        scale: 3,
-        opacity: 0,
-        rotation: 15,
-        ease: Expo.easeOut
-      },
-      0.2
-    )
+
+  // .idea-6 animation
+  tl.staggerFrom(
+    ".idea-6 span",
+    0.8,
+    {
+      scale: 3,
+      opacity: 0,
+      rotation: 15,
+      ease: Expo.easeOut
+    },
+    0.2
+  )
     .staggerTo(
       ".idea-6 span",
       0.8,
@@ -208,18 +212,21 @@ const animationTimeline = () => {
       },
       0.2
     )
-    .from(
-      ".shusmita-dp",
-      0.5,
-      {
-        scale: 3.5,
-        opacity: 0,
-        x: 25,
-        y: -25,
-        rotationZ: -45
-      },
-      "-=2"
-    )
+    .add(() => {
+      // Display shusmita-dp 2 seconds after the completion of idea-6 animation
+      TweenMax.from(
+        ".shusmita-dp",
+        0.5,
+        {
+          scale: 3.5,
+          opacity: 0,
+          x: 25,
+          y: -25,
+          rotationZ: -45
+        }
+      );
+    }, "+=2") )
+  
     .from(".hat", 0.5, {
       x: -100,
       y: 350,
