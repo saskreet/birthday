@@ -1,4 +1,4 @@
-// Import the data to customize and insert them into the page
+// Import the data to customize and insert them into page
 const fetchData = () => {
   fetch("customize.json")
     .then(data => data.json())
@@ -14,6 +14,7 @@ const fetchData = () => {
             document.querySelector(`[data-node-name*="${customData}"]`).innerText = data[customData];
           }
         }
+
         // Check if the iteration is over
         // Run animation if so
         if (dataArr.length === dataArr.indexOf(customData) + 1) {
@@ -25,52 +26,19 @@ const fetchData = () => {
 
 // Animation Timeline
 const animationTimeline = () => {
-  // ... (existing code)
+  // ... (existing animation code)
 
   const tl = new TimelineMax();
 
-  // ... (existing code)
+  // ... (existing animation code)
 
-  // .idea-6 animation
-  tl.staggerFrom(
-    ".idea-6 span",
-    0.8,
-    {
-      scale: 3,
-      opacity: 0,
-      rotation: 15,
-      ease: Expo.easeOut
-    },
-    0.2
-  )
-    .staggerTo(
-      ".idea-6 span",
-      0.8,
-      {
-        scale: 3,
-        opacity: 0,
-        rotation: -15,
-        ease: Expo.easeOut
-      },
-      0.2,
-      "+=1"
-    )
-    .staggerFromTo(
-      ".baloons img",
-      2.5,
-      {
-        opacity: 0.9,
-        y: 1400
-      },
-      {
-        opacity: 1,
-        y: -1000
-      },
-      0.2
-    )
+  tl
+    .to(".container", 0.1, {
+      visibility: "visible"
+    })
     .from(
       ".shusmita-dp",
-      0.5,
+      1,  // Display shusmita-dp after 1 second
       {
         scale: 3.5,
         opacity: 0,
@@ -78,28 +46,16 @@ const animationTimeline = () => {
         y: -25,
         rotationZ: -45
       },
-      "+=2" // Delay display of .shusmita-dp by 2 seconds after .idea-6 completion
+      "-=1" // Start 1 second before the previous animation ends
     )
-    .from(".hat", 0.5, {
-      x: -100,
-      y: 350,
-      rotation: -180,
-      opacity: 0
-    })
-    .staggerFrom(
-      ".wish-hbd span",
-      0.7,
-      {
-        opacity: 0,
-        y: -50,
-        rotation: 150,
-        skewX: "30deg",
-        ease: Elastic.easeOut.config(1, 0.5)
-      },
-      0.1
-    );
 
-  // ... (remaining existing code)
+  // ... (rest of the existing animation code)
+
+  // Restart Animation on click
+  const replyBtn = document.getElementById("replay");
+  replyBtn.addEventListener("click", () => {
+    tl.restart();
+  });
 };
 
 // Run fetch and animation in sequence
