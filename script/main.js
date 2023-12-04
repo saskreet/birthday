@@ -192,7 +192,7 @@ const animationTimeline = () => {
         rotation: -15,
         ease: Expo.easeOut
       },
-      0.2,
+      0.0,
       "+=1"
     )
     .staggerFromTo(
