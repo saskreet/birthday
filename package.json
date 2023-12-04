@@ -16,13 +16,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saskreet/happybirthdaylove.git"
+    "url": "git+https://github.com/faahim/happy-birthday.git"
   },
   "keywords": [
     "Happy",
     "Birthday"
   ],
-  "author": "Saskreet",
+  "author": "Afiur Rahman Fahim",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/faahim/happy-birthday/issues"
